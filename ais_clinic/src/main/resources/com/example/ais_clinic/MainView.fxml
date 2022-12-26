@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="803.0" minHeight="-Infinity" minWidth="725.0" prefHeight="358.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ais_clinic.MainController">
+   <children>
+      <TabPane layoutX="9.0" layoutY="14.0" prefHeight="329.0" prefWidth="781.0" style="-fx-background-color: lightgray;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Приёмы">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="765.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="14.0" layoutY="14.0" prefHeight="273.0" prefWidth="433.0">
+                            <placeholder>
+                                <Label text=""></Label>
+                            </placeholder>
+                          <columns>
+                            <TableColumn fx:id="doctorColumn" prefWidth="75.0" text="Врач" />
+                            <TableColumn fx:id="patientColumn" prefWidth="75.0" text="Пациент" />
+                              <TableColumn fx:id="examColumn" prefWidth="147.0" text="Обследование" />
+                              <TableColumn fx:id="dateAndTimeColumn" prefWidth="135.0" text="Дата и время приема" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="463.0" layoutY="14.0" text="Врач:" />
+                        <ComboBox fx:id="doctorCombo" layoutX="552.0" layoutY="10.0" prefHeight="25.0" prefWidth="221.0" />
+                        <Label layoutX="463.0" layoutY="57.0" text="Пациент:" />
+                        <ComboBox fx:id="patientCombo" layoutX="552.0" layoutY="53.0" prefHeight="25.0" prefWidth="221.0" />
+                        <ComboBox fx:id="examCombo" layoutX="552.0" layoutY="96.0" prefHeight="25.0" prefWidth="221.0" />
+                        <Label layoutX="463.0" layoutY="100.0" text="Обследование:" />
+                        <DatePicker fx:id="receptionDate" layoutX="552.0" layoutY="138.0" />
+                        <Label layoutX="463.0" layoutY="142.0" text="Дата приёма:" />
+                        <Label layoutX="463.0" layoutY="186.0" text="Время приёма:" />
+                        <TextField fx:id="receptionHour" layoutX="552.0" layoutY="182.0" prefHeight="25.0" prefWidth="35.0" />
+                        <TextField fx:id="receptionMin" layoutX="618.0" layoutY="182.0" prefHeight="25.0" prefWidth="35.0" />
+                        <Label layoutX="587.0" layoutY="186.0" text="ч" />
+                        <Label layoutX="653.0" layoutY="186.0" text="м" />
+                        <Button fx:id="addReceptionButton" layoutX="462.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="Добавить" />
+                        <Button fx:id="deleteReceptionButton" layoutX="653.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Удалить" />
+
+                        <Label fx:id="receptionLabel" layoutX="462.0" layoutY="266.0" text="" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Врачи">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="addDoctorButton" layoutX="276.0" layoutY="66.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="258.0" text="Добавить" />
+                        <Button fx:id="deleteDoctorButton" layoutX="541.0" layoutY="66.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="232.0" text="Удалить" />
+                        <ListView fx:id="doctorsList" layoutX="14.0" layoutY="13.0" prefHeight="280.0" prefWidth="254.0" />
+                        <Label layoutX="276.0" layoutY="14.0" text="ФИО врача:" />
+                        <Label layoutX="541.0" layoutY="14.0" text="e-mail:" />
+                        <TextField fx:id="doctorNameText" layoutX="276.0" layoutY="31.0" prefHeight="25.0" prefWidth="259.0" />
+                        <TextField fx:id="doctorEmailText" layoutX="541.0" layoutY="31.0" prefHeight="25.0" prefWidth="232.0" />
+                        <Label fx:id="doctorTabLabel" layoutX="276.0" layoutY="269.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="" text="Пациенты">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="patientsList" layoutX="14.0" layoutY="14.0" prefHeight="279.0" prefWidth="255.0" />
+                        <Label layoutX="285.0" layoutY="14.0" text="ФИО пациента:" />
+                        <Label layoutX="539.0" layoutY="14.0" text="e-mail:" />
+                        <TextField fx:id="patientNameText" layoutX="285.0" layoutY="31.0" prefHeight="25.0" prefWidth="237.0" />
+                        <TextField fx:id="patientEmailText" layoutX="539.0" layoutY="31.0" prefHeight="25.0" prefWidth="230.0" />
+                        <Button fx:id="addPatientButton" layoutX="285.0" layoutY="75.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="235.0" text="Добавить" />
+                        <Button fx:id="deletePatientButton" layoutX="539.0" layoutY="75.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="229.0" text="Удалить" />
+                        <Label fx:id="patientTabLabel" layoutX="285.0" layoutY="269.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="" text="Обследования">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="316.0" prefWidth="705.0">
+                     <children>
+                        <ListView fx:id="examinationsList" layoutX="14.0" layoutY="13.0" prefHeight="274.0" prefWidth="258.0" />
+                        <Button fx:id="addExaminationButton" layoutX="284.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Добавить" />
+                        <Button fx:id="deleteExaminationButton" layoutX="494.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Удалить" />
+                        <TextField fx:id="examinationNameText" layoutX="285.0" layoutY="36.0" prefHeight="25.0" prefWidth="198.0" />
+                        <Label layoutX="285.0" layoutY="14.0" text="Название обследования:" />
+                        <Label layoutX="494.0" layoutY="14.0" text="Стоимость:" />
+                        <TextField fx:id="examinationPriceText" layoutX="494.0" layoutY="36.0" prefHeight="25.0" prefWidth="83.0" />
+                        <Label layoutX="583.0" layoutY="40.0" text="руб." />
+                        <Label fx:id="examinationTabLabel" layoutX="284.0" layoutY="269.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
